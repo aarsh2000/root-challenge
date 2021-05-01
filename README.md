@@ -1,6 +1,3 @@
-![equation](http://latex.codecogs.com/gif.latex?O_t%3D%5Ctext%20%7B%20Onset%20event%20at%20time%20bin%20%7D%20t)
-![equation](http://latex.codecogs.com/gif.latex?s%3D%5Ctext%20%7B%20sensor%20reading%20%7D) 
-![equation](http://latex.codecogs.com/gif.latex?P%28s%20%7C%20O_t%20%29%3D%5Ctext%20%7B%20Probability%20of%20a%20sensor%20reading%20value%20when%20sleep%20onset%20is%20observed%20at%20a%20time%20bin%20%7D%20t)
 # Root Challenge
 
 A c++ program that parses driver trips and returns trip details (see sample i/o for more [details](https://gist.github.com/dan-manges/1e1854d0704cb9132b74)).
@@ -43,9 +40,9 @@ The program first reads each line of input. If a driver command is seen, it gets
 ## Features and Optimizations
 - Uses smart pointers, which ensures that no memmory is being leaked  (unique_ptrs)
 - Uses best practices for Object oriented programming (data abstraction)
-- Uses map key-value pair data structure to store drivers, so searching for a driver is efficient (search only takes $$O(\log(n))$$ time, where $$n$$ is the number of distinct drivers)
-- Priority queue sorts when inserting, and since we're inserting $$n$$ drivers, sorting only take $$O(n)$$ time, which is much better than conventional sorting $$O(n \log(n))$$, where $$n$$ is number of distinct drivers
-- Overall program is very efficient, given $$n$$ distinct drivers, total run time would be $$O(\log(n)) + O(n) = O(n) \implies \text{linear run time.}$$
+- Uses map key-value pair data structure to store drivers, so searching for a driver is efficient (search only takes O(log(n)) time, where n is the number of distinct drivers)
+- Priority queue sorts when inserting, and since we're inserting n drivers, sorting only take O(n) time, which is much better than conventional sorting O(nlog(n)), where n is number of distinct drivers
+- Overall program is very efficient, given $$n$$ distinct drivers, total run time would be O(n) which implies linear run time
 
 ## Notes and Important Assumptions for Correctness
 
