@@ -35,14 +35,14 @@ For example,
 ![alt text](https://i.imgur.com/stoLcRB.png)
 
 ## How the Program Works
-The program first reads each line of input. If a driver command is seen, it gets added to a map (key value pair data structure), where the key is the driver's name, and the value is the struct Driver. If the trip command is seen, we find the driver in the map, and add the trip information to the Driver struct. Once we are done reading input, we itterate through the map and move each Driver into a priority queue, where the key is the total miles traveled, and the value is the Driver struct. Finally, we itterate through the priority queue from the top, and print out the driver's detail.
+The program first reads each line of input. If a driver command is seen, it gets added to a map (key value pair data structure), where the key is the driver's name, and the value is the struct Driver. If the trip command is seen, we find the driver in the map, and add the trip information to the Driver struct. Once we are done reading input, we itterate through the map and move each Driver into a priority queue, where the key is the total miles traveled, and the value is the Driver struct. Finally, we itterate through the priority queue from the top, and print out the driver's details.
 
 ## Features and Optimizations
 - Uses smart pointers, which ensures that no memmory is being leaked  (unique_ptrs)
-- Uses best practices for Object oriented programming (data abstraction)
+- Uses best practices for Object oriented programming through structs and data abstraction
 - Uses map key-value pair data structure to store drivers, so searching for a driver is efficient (search only takes O(log(n)) time, where n is the number of distinct drivers)
 - Priority queue sorts when inserting, and since we're inserting n drivers, sorting only take O(n) time, which is much better than conventional sorting O(nlog(n)), where n is number of distinct drivers
-- Overall program is very efficient, given $$n$$ distinct drivers, total run time would be O(n) which implies linear run time
+- Overall program is very efficient, given n distinct drivers, total run time of the program would be O(n) which implies linear run time
 
 ## Notes and Important Assumptions for Correctness
 
