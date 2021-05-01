@@ -65,11 +65,11 @@ void splitText(vector<string> *words, string text)
 double getDurationInHours(string start, string end)
 {
     double NUM_MINUTES_IN_HOUR = 60.0;
-    double startHour = stof(start.substr(0, 2));
-    double startMinutes = stof(start.substr(3, 5));
+    double startHour = stod(start.substr(0, 2));
+    double startMinutes = stod(start.substr(3, 5));
 
-    double endHour = stof(end.substr(0, 2));
-    double endMinutes = stof(end.substr(3, 5));
+    double endHour = stod(end.substr(0, 2));
+    double endMinutes = stod(end.substr(3, 5));
 
     return ((endHour - startHour) * NUM_MINUTES_IN_HOUR + endMinutes - startMinutes) / NUM_MINUTES_IN_HOUR;
 }
