@@ -97,10 +97,10 @@ int main()
         {
             Driver *d = drivers.at(words[1]).get();
             const double tripDuration = getDurationInHours(words[2], words[3]);
-            const double tripSpeed = stof(words[4]) / tripDuration;
+            const double tripSpeed = stod(words[4]) / tripDuration;
             if (tripSpeed >= MIN_SPEED && tripSpeed <= MAX_SPEED)
             {
-                d->setMilesDriven(d->getMilesDriven() + stof(words[4]));
+                d->setMilesDriven(d->getMilesDriven() + stod(words[4]));
                 d->setTotalDuration(d->getTotalDuration() + tripDuration);
             }
         }
