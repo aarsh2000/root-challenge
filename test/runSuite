@@ -1,0 +1,36 @@
+#!/bin/bash
+
+if [ ${#} != 2 ] ; then
+	echo "Error: Requires exactly 2 arguments">&2
+	exit 2;
+else
+	for testFile in $(<${1}) ; do
+		if [ ! -f $testFile.out ] ; then
+			echo "Error: Missing $testFile.out">&2
+			exit 3;
+		fi
+		if [ ! -r $testFile.out ] ; then
+			echo "Error: Unreadable $testFile.out">&2
+			exit 4;
+		fi
+		
+		 if [ -f $testFile.in -a -r $testFile.in ] ; then
+			 tmpFile3=$(mktemp /tmp/${1}.XXXXXX)
+			${2} < $testFile.in > $tmpFile3
+			 if ! diff $tmpFile3 $testFile.out > /dev/null ; then
+				echo "Test failed: $testFile"
+				echo "Args:"
+				echo "Input:"
+				echo "$(<$testFile.in)"
+				echo "Expected:"
+				echo "$(<$testFile.out)"
+				echo "Actual:"
+				echo "$(<$tmpFile3)"
+			  else
+			  	echo "Test '$testFile' passed ✔"
+			fi
+			rm "$tmpFile3"
+		fi
+	done
+fi
+exit 0
