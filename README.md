@@ -41,8 +41,7 @@ The program first reads each line of input. If a driver command is seen, it gets
 - Uses smart pointers, which ensures that no memmory is being leaked  (unique_ptrs)
 - Uses best practices for Object oriented programming through structs and data abstraction
 - Uses map key-value pair data structure to store drivers, so searching for a driver is efficient (search only takes O(log(n)) time, where n is the number of distinct drivers)
-- Priority queue sorts when inserting, and since we're inserting n drivers, sorting only take O(n) time, which is much better than conventional sorting O(nlog(n)), where n is number of distinct drivers
-- Overall program is very efficient, given n distinct drivers, total run time of the program would be O(n) which implies linear run time
+- Priority queue sorts when inserting, and since we're inserting n drivers, the time complexity of this algorithm is O(nlog(n))
 
 ## Notes and Important Assumptions for Correctness
 
